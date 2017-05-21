@@ -241,7 +241,29 @@ void selectionsort(int * array,int length){
   }
 }
 
-void shellsort(int * array, int length){}
+//this works by sorting pairs of elements seperated by a gap
+//It then keep shrinking the gap 
+//This starts with a gap of length/2 and then keep reducing that
+//gap by a half until it's 0
+//O(n^2) timpe complexity with O(n) space complexity
+void shellsort(int * array, int length){
+	int gap;
+	//set the gap and halve it
+	for(gap = length/2; gap > 0; gap = gap/2){
+		int i;
+		
+		for(i =gap ; i < length; i++){
+			int temp = array[i];
+			int j = i;
+			while(j >= gap && array[j - gap]  > temp){
+				array[j] = array[j - gap];
+				j -=gap;
+			}
+			array[j] = temp;			
+		}
+	}
+	
+}
 
 //convert an integer array into a heap using sift method
 //starts on the last parent node from the bottom
