@@ -9,6 +9,7 @@ This currently implements the folowing sorting methods:
 + Insertion sort
 + Selection sort
 + Count sort
+
 Shell sort is not currently implemented but will be 
 It also has the methods sift down and heapify for heap sort. 
 Radix uses count sort and uses base 10.The method swap, swaps 2 elements at i and j.
